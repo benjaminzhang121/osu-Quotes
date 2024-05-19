@@ -1,6 +1,9 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 
 const app = express();
 
@@ -8,8 +11,10 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// MongoDB connection
-mongoose.connect('mongodb://localhost:27017/QuotesDB')
+// mongoDB connection
+const mongoURI = process.env.MONGODB_URI;
+
+mongoose.connect(mongoURI)
   .then(() => {
     console.log('Connected to MongoDB');
   })
@@ -17,10 +22,10 @@ mongoose.connect('mongodb://localhost:27017/QuotesDB')
     console.error('Error connecting to MongoDB:', err);
   });
 
-
 // define the Mongoose schema for quotes
 const quoteSchema = new mongoose.Schema({
-  text: String
+  text: String,
+  author: String
 });
 
 // create a Mongoose model based on the schema
