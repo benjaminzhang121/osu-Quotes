@@ -24,8 +24,7 @@ mongoose.connect(mongoURI)
 
 // define the Mongoose schema for quotes
 const quoteSchema = new mongoose.Schema({
-  text: String,
-  author: String
+  text: String
 });
 
 // create a Mongoose model based on the schema
