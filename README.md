@@ -50,6 +50,7 @@ Access the API at http://localhost:3000/random-quote.
 Endpoints:
 
 - GET /random-quote: Retrieves a random quote from the database.
+- The main purpose of this program is to be used with [Tournament History Sheet Template](https://docs.google.com/spreadsheets/d/1hlngeWJaxbcC499_V0Yo2mcit6aaMAGq7Vcnq0dc4Lk/edit?usp=sharing), specifically, the quote of the day section which will fetch a random quote from this application.
 
 ## Deployment
 ---
